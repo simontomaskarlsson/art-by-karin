@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './images/ex1.jpg';
 import './App.css';
 
 class App extends Component {
@@ -9,9 +9,8 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Välkommen raring. 
+            Edit <code>src/App.js</code> and save to reload.
           </p>
-          <p><code>src/App.js</code></p>
           <a
             className="App-link"
             href="https://reactjs.org"
