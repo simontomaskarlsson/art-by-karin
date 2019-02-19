@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
 import Image from './Image.js'
-import logo from './images/logo.svg';
-import logo2 from './images/ex1.jpg';
 
-
-class ImageRow extends Component {
-  render() {
+function ImageRow(props) {
+    var imageItems = props.images.map(function(image){
+                    return <Image url={image}/>;
+                  })
     return (
         <div className="container">
             <div className="row">
-                <Image url={logo}/>
-                <Image url={logo2}/>
-                <Image />
+                { imageItems }
             </div>
         </div>
     );
   }
-}
 
 export default ImageRow;
-
