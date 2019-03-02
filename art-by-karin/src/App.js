@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import HeaderMenu from './HeaderMenu.js'
 import ImageRow from './ImageRow.js';
 import * as Helpers from './HelperFunctions';
 
@@ -10,6 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <HeaderMenu />
         <header className="App-header">
               <ImageRow images={images} />
               <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
@@ -17,6 +19,7 @@ class App extends Component {
           </a>
         </header>
       </div>
+
     );
   }
 }
