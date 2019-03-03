@@ -5,7 +5,27 @@ body{
 .App {
   text-align: center;
   align-items: center;
-  margin-top: 7%;
+  margin-top: 4%;
+}
+
+/* TODO Fix styling */
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0%;  
+  left: 45%;
+  right: 0;
+  /* bottom: 0; */
+  margin: auto; 
+}
+.popup_inner {
+  position: absolute;
+  /* left: 25%; */
+  /* right: 25%;
+  top: 25%;
+  bottom: 25%; */
+  margin: auto;
 }
 
 div {
@@ -16,6 +36,13 @@ div {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
+}
+
+.rowComp{
+  /* display: flex;
+  flex-direction: row;
+  width: 50px */
+  /* justify-content: space-between; */
 }
 
 .App-header {

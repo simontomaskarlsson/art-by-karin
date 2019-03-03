@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Popup from './Popup.js'
+import IconAnimation from './IconAnimation.js'
+import emailIcon from './icons/emailIcon.png'
 
 class PopupButton extends Component {
   constructor() {
@@ -16,7 +18,7 @@ class PopupButton extends Component {
   render() {
     return (
       <div className='"effect-underline">'>
-        <a onClick={this.togglePopup.bind(this)}>Contact</a>    
+        <a onClick={this.togglePopup.bind(this)}>Contact<IconAnimation image={emailIcon} /></a>    
         {this.state.showPopup ? 
           <Popup
             text='jesper@gmail.com'

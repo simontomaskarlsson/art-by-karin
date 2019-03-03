@@ -22,7 +22,7 @@ class HeaderMenu extends Component {
               </div>
               <div className="row mobile-header-item">
               {/* TODO: Make nicer */}
-                <a className="effect-underline"><PopupButton /><IconAnimation image={emailIcon} /></a>
+                <a className="effect-underline"><PopupButton />/></a>
               </div>
               <div className="row mobile-header-item">
                 <a class="effect-underline">FAQs<IconAnimation image={atIcon} /></a>
@@ -50,7 +50,7 @@ class HeaderMenu extends Component {
                   <a class="effect-shine name">Karin Johansson</a>
                 </div>
                 <div className="col-xs-6 header-item right-aligned">
-                  <a className="effect-underline"><PopupButton /><IconAnimation image={emailIcon} /></a>
+                  <a className="effect-underline"><PopupButton /></a>
                   <a class="effect-underline">FAQs<IconAnimation image={atIcon}/></a>
                 </div>
               </div>
