@@ -1,5 +1,15 @@
+body{
+  background-color: #ededed;
+}
+
 .App {
   text-align: center;
+  align-items: center;
+  margin-top: 7%;
+}
+
+div {
+  align-items: center;
 }
 
 .App-logo {
@@ -9,7 +19,7 @@
 }
 
 .App-header {
-  background-color: #ededed;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -50,3 +60,23 @@
     transform: rotate(360deg);
   }
 } */
+
+.carousel .slide .legend {
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -30% !important;
+  height: 2;
+  width: 60% !important;
+  border-radius: 8px !important;
+  background: #333 !important;
+  color: #fff !important;
+  padding: 0px !important;
+  font-size: 12px;
+  text-align: center;
+  opacity: .25;
+  -webkit-transition: opacity .35s ease-in-out;
+  transition: opacity .35s ease-in-out;
+}

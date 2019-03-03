@@ -6,6 +6,7 @@ import HeaderMenu from './HeaderMenu.js'
 import ImageRow from './ImageRow.js';
 import DemoCarousel from './DemoCarousel.js';
 
+
 import * as Helpers from './HelperFunctions';
 // -----------------------------------------------------------------------------
 
@@ -16,7 +17,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      width: window.innerWidth,
+    showPopup: false,      
+    width: window.innerWidth,
     };
   }
   componentWillMount() {
@@ -28,7 +30,12 @@ class App extends Component {
   handleWindowSizeChange = () => {
     this.setState({ width: window.innerWidth });
   };
-
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
+  
   render() {
     const { width } = this.state;
     const isMobile = width <= 500;
