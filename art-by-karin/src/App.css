@@ -23,8 +23,27 @@
   color: #61dafb;
 }
 
+.row .left-aligned {
+  text-align: left;
+  padding-left: 5rem;
+}
+
+.row .right-aligned {
+  text-align: right;
+  padding-right: 5rem;
+}
+
+.mobile-header-item {
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.carousel-container {
+  width: 50rem;
+  height:50rem;
+}
 /* @keyframes App-logo-spin {
-  from {  
+  from {
     transform: rotate(0deg);
   }
   to {
