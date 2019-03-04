@@ -17,9 +17,9 @@ class PopupButton extends Component {
   }
   render() {
     return (
-      <div className='"effect-underline">'>
-        <a onClick={this.togglePopup.bind(this)}>Contact<IconAnimation image={emailIcon} /></a>    
-        {this.state.showPopup ? 
+      <div>
+        <a className="effect-underline" onClick={this.togglePopup.bind(this)}>Contact<IconAnimation image={emailIcon} /></a>
+        {this.state.showPopup ?
           <Popup
             text='jesper@gmail.com'
             closePopup={this.togglePopup.bind(this)}

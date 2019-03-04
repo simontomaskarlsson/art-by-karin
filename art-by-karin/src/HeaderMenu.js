@@ -14,18 +14,12 @@ class HeaderMenu extends Component {
     if (this.props.isMobile) {
       return (
         <StickyHeader
-          // This is the sticky part of the header.
           header={
             <div className="Header_root">
-              <div className="row mobile-header-item">
-                <a class="effect-shine name">Karin Johansson</a>
-              </div>
-              <div className="row mobile-header-item">
-              {/* TODO: Make nicer */}
-                <a className="effect-underline"><PopupButton />/></a>
-              </div>
-              <div className="row mobile-header-item">
-                <a class="effect-underline">FAQs<IconAnimation image={atIcon} /></a>
+              <div className="header-row-mobile">
+                <a className="effect-shine name">Karin Johansson</a>
+                <PopupButton className="effect-underline"/>
+                <a className="effect-underline">FAQs<IconAnimation image={atIcon}/></a>
               </div>
             </div>
           }
@@ -42,16 +36,15 @@ class HeaderMenu extends Component {
     else {
       return (
         <StickyHeader
-          // This is the sticky part of the header.
           header={
             <div className="Header_root">
-              <div className="row">
-                <div className="col-xs-6 header-item left-aligned">
-                  <a class="effect-shine name">Karin Johansson</a>
+              <div className="header-row">
+                <div>
+                  <a className="effect-shine name">Karin Johansson</a>
                 </div>
-                <div className="col-xs-6 header-item right-aligned">
-                  <a className="effect-underline"><PopupButton /></a>
-                  <a class="effect-underline">FAQs<IconAnimation image={atIcon}/></a>
+                <div>
+                  <a><PopupButton /></a>
+                  <a className="effect-underline">FAQs<IconAnimation image={atIcon}/></a>
                 </div>
               </div>
             </div>
@@ -87,8 +80,8 @@ class HeaderMenu extends Component {
 //       <div className='app'>
 //         <h1>hihi</h1>
 //         <button onClick={this.togglePopup.bind(this)}>show popup</button>
-       
-//         {this.state.showPopup ? 
+
+//         {this.state.showPopup ?
 //           <Popup
 //             text='Close Me'
 //             closePopup={this.togglePopup.bind(this)}

@@ -7,7 +7,6 @@ function IconAnimation(props) {
 const iconStyle = {
   width: '12px',
   marginLeft: '0.7rem',
-  marginBottom: '0.25rem',
 };
 
 export default IconAnimation;

@@ -13,11 +13,11 @@ body{
   position: fixed;
   width: 100%;
   height: 100%;
-  top: 0%;  
+  top: 0%;
   left: 45%;
   right: 0;
   /* bottom: 0; */
-  margin: auto; 
+  margin: auto;
 }
 .popup_inner {
   position: absolute;
@@ -26,10 +26,6 @@ body{
   top: 25%;
   bottom: 25%; */
   margin: auto;
-}
-
-div {
-  align-items: center;
 }
 
 .App-logo {
@@ -60,18 +56,18 @@ div {
   color: #61dafb;
 }
 
-.row .left-aligned {
-  text-align: left;
-  padding-left: 5rem;
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-.row .right-aligned {
-  text-align: right;
-  padding-right: 5rem;
-}
-
-.mobile-header-item {
-  text-align: left;
+.header-row-mobile{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
   padding-left: 2rem;
 }
 
