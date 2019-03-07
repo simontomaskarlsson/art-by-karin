@@ -103,3 +103,12 @@ body{
   -webkit-transition: opacity .35s ease-in-out;
   transition: opacity .35s ease-in-out;
 }
+
+.legend span{
+  display: flex;
+  font-size: 15px;
+  color: white;
+  margin: -15px;
+  padding-bottom: 10px;
+
+}

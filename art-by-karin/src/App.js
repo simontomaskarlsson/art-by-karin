@@ -1,54 +1,28 @@
-import React, { Component } from 'react';
-
-import './App.css';
-
-import HeaderMenu from './HeaderMenu.js'
-import ImageRow from './ImageRow.js';
-import DemoCarousel from './DemoCarousel.js';
-
-
-import * as Helpers from './HelperFunctions';
-// -----------------------------------------------------------------------------
-
-//Global variables
-const images = Helpers.importAllFilesFromFolder(require.context('./images/', false, /\.(gif|png|jpe?g|svg)$/));
+import React, { Component } from "react";
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
+import CarouselApp from "./CarouselApp";
+import SingleImageApp from "./SingleImageApp";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-    showPopup: false,      
-    width: window.innerWidth,
-    };
-  }
-  componentWillMount() {
-  window.addEventListener('resize', this.handleWindowSizeChange);
-  }
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleWindowSizeChange);
-  }
-  handleWindowSizeChange = () => {
-    this.setState({ width: window.innerWidth });
-  };
-  togglePopup() {
-    this.setState({
-      showPopup: !this.state.showPopup
-    });
-  }
-  
   render() {
-    const { width } = this.state;
-    const isMobile = width <= 500;
-
     return (
-      <div className="App">
-      <HeaderMenu isMobile={isMobile}/>
-        <header className="App-header">
-        <div class="container carousel-container">
-          <DemoCarousel images={images}/>
+      <HashRouter>
+        <div>
+          <h1>Simple SPA</h1>
+          <ul className="header">
+          <li><NavLink to="/CarouselApp">CarouselApp</NavLink></li>
+          <li><NavLink to="/SingleImageApp">SingleImageApp</NavLink></li>
+          </ul>
+          <div className="content">
+            <Route exact path="/CarouselApp" component={CarouselApp}/>
+            <Route path="/SingleImageApp" component={SingleImageApp}/>
+          </div>
         </div>
-        </header>
-      </div>
+      </HashRouter>
     );
   }
 }

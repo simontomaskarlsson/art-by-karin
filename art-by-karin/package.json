@@ -6,6 +6,7 @@
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-responsive-carousel": "^3.1.47",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.5",
     "react-sticky": "^6.0.3",
     "react-sticky-header": "^0.2.0"
