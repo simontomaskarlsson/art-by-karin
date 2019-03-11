@@ -1,28 +1,42 @@
 import React, { Component } from "react";
-import {
-  Route,
-  NavLink,
-  HashRouter
-} from "react-router-dom";
-import CarouselApp from "./CarouselApp";
-import SingleImageApp from "./SingleImageApp";
+import HeaderMenu from './HeaderMenu.js'
+import IntroApp from './IntroApp.js'
+import './App.css';
+
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+    showPopup: false,
+    width: window.innerWidth,
+    };
+  }
+  componentWillMount() {
+  window.addEventListener('resize', this.handleWindowSizeChange);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+  }
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth });
+  };
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
+
   render() {
+    const { width } = this.state;
+    const isMobile = width <= 500;
     return (
-      <HashRouter>
-        <div>
-          <h1>Simple SPA</h1>
-          <ul className="header">
-          <li><NavLink to="/CarouselApp">CarouselApp</NavLink></li>
-          <li><NavLink to="/SingleImageApp">SingleImageApp</NavLink></li>
-          </ul>
-          <div className="content">
-            <Route exact path="/CarouselApp" component={CarouselApp}/>
-            <Route path="/SingleImageApp" component={SingleImageApp}/>
-          </div>
-        </div>
-      </HashRouter>
+      <div className="App">
+        <header className="App-header">
+          <HeaderMenu isMobile={isMobile}/>
+        </header>
+        <IntroApp />
+      </div>
     );
   }
 }

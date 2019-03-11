@@ -1,20 +1,16 @@
 import React, { Component } from "react";
 
 class SingleImageApp extends Component {
-  constructor() {
-    super()
-    this.state = {
-      image: ""
-    }
-  }
   render() {
-    // const { image, match: { params } } = this.props;
-    const { match: { params } } = this.props;
+    var imageUrl = this.props.location.pathname;
+    imageUrl = "/static/media/" + imageUrl.split("/").slice(-1)[0];
+
     return (
-      <div>
-        <h2>Rubrik</h2>
+      <div class="container singleImageContainer">
+        <img src={imageUrl}/>
         <div>
-        {this.image}
+          <h3>Piece title</h3>
+          <span>Description of art piece; idea, influences, receiver etc.</span>
         </div>
       </div>
     );
