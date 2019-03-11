@@ -14,7 +14,8 @@ class DemoCarousel extends Component {
       <Carousel
         centerMode={true}
         centerSlidePercentage={100}
-        transitionTime={1000}>
+        transitionTime={1000}
+        changeActiveImage={(imageIndex) => this.props.changeActiveImage(imageIndex)}>
         {imageItems}
       </Carousel>
     );
