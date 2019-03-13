@@ -45,14 +45,17 @@ class App extends Component {
 
   openModal() {
     this.setState({modalIsOpen: true});
+    this.changeActiveImage();
   }
 
   closeModal() {
     this.setState({modalIsOpen: false});
   }
 
-  changeActiveImage(imageIndex) {
-    this.setState({activeImage: images[imageIndex]});
+  changeActiveImage() {
+    var str = document.getElementById("active-image-index-tag").innerHTML;
+    var index = str[0];
+    this.setState({activeImage: images[index - 1]});
   }
 
   render() {
@@ -61,14 +64,14 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div id="modalContainer">
+        <div id="modalElement">
           <SingleImageModal modalIsOpen={this.state.modalIsOpen} closeModal={this.closeModal} image={this.state.activeImage}/>
         </div>
         <HeaderMenu isMobile={isMobile}/>
           <header className="App-header">
-          <button onClick={this.openModal}>Open Modal</button>
+          <button onClick={this.openModal}>open modal</button>
           <div class="container carousel-container">
-            <DemoCarousel images={images} changeActiveImage={(imageIndex) => this.changeActiveImage(imageIndex)}/>
+            <DemoCarousel images={images}/>
           </div>
         </header>
       </div>

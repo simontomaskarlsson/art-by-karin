@@ -71,6 +71,23 @@ body{
   padding-left: 2rem;
 }
 
+#modalContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80%;
+  overflow: auto
+}
+#modalContainer img {
+  max-width:60%;
+}
+
+.modal-info-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .carousel-container {
   width: 50rem;
   height:50rem;

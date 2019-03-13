@@ -27,7 +27,7 @@ class SingleImageModal extends React.Component {
   }
 
   componentDidMount() {
-    Modal.setAppElement('#modalContainer');
+    Modal.setAppElement('#modalElement');
   }
 
   render() {
@@ -37,7 +37,15 @@ class SingleImageModal extends React.Component {
           isOpen={this.props.modalIsOpen}
           style={customStyles}
           contentLabel="Single Image Modal">
-            <img src={this.props.image}/>
+            <div className="container" id="modalContainer">
+                <img src={this.props.image}/>
+                <div className="modal-info-list">
+                <h3>Björnis - mycket fin</h3>
+                <span>Denna gjorde jag en gång</span>
+                <span>Tog mycket tid</span>
+                <span><b>Pris:</b> Massa pengar</span>
+                </div>
+            </div>
         </Modal>
       </div>
     );
