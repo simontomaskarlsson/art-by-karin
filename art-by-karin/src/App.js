@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-  window.addEventListener('resize', this.handleWindowSizeChange);
+    window.addEventListener('resize', this.handleWindowSizeChange);
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleWindowSizeChange);
@@ -62,15 +62,37 @@ class App extends Component {
     const { width } = this.state;
     const isMobile = width <= 500;
 
+    const carouselContainerStyling = {
+      display: 'flex',
+      flexDirection: 'column',
+      width: '50rem',
+      height:'50rem',
+      visibility: this.state.modalIsOpen ? 'hidden' : 'visible'
+    }
+
+    // const openModalButtonStyling = {
+    //   position: 'absolute',
+    //   backgroundColor: 'black',
+    //   marginTop: '-10rem',
+    //   width: '40rem',
+    //   height:'30rem',
+    //   zIndex: '5',
+    //   visibility: this.state.modalIsOpen ? 'hidden' : 'visible'
+    // }
+
     return (
+
       <div className="App">
         <div id="modalElement">
-          <SingleImageModal modalIsOpen={this.state.modalIsOpen} closeModal={this.closeModal} image={this.state.activeImage}/>
+          <SingleImageModal
+            modalIsOpen={this.state.modalIsOpen}
+            closeModal={this.closeModal}
+            image={this.state.activeImage}/>
         </div>
         <HeaderMenu isMobile={isMobile}/>
           <header className="App-header">
-          <button onClick={this.openModal}>open modal</button>
-          <div class="container carousel-container">
+          <div id="open-modal-button" className="container carousel-container" style={carouselContainerStyling}>
+            <div className="open-modal-button" onClick={this.openModal}>piece details</div>
             <DemoCarousel images={images}/>
           </div>
         </header>
