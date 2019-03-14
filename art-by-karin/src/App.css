@@ -133,7 +133,11 @@ body{
   align-items: flex-start;
   padding-left: 2rem;
 }
-
+@media only screen and (max-width: 800px) {
+  #modalContainer {
+    flex-direction: column;
+  }
+}
 #modalContainer {
   display: flex;
   justify-content: space-between;
