@@ -4,8 +4,6 @@ import StickyHeader from 'react-sticky-header';
 import IconAnimation from './IconAnimation.js'
 import PopupButton from './PopupButton.js'
 
-import './HeaderTextHover.css'
-
 import atIcon from './icons/atIcon.png'
 import emailIcon from './icons/emailIcon.png'
 

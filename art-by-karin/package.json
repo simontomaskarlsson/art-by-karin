@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
+    "react-modal": "^3.8.1",
     "react-responsive-carousel": "^3.1.47",
     "react-scripts": "^2.1.5",
     "react-sticky": "^6.0.3",
