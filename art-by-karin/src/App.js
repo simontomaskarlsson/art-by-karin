@@ -20,7 +20,8 @@ class App extends Component {
     showPopup: false,
     width: window.innerWidth,
     modalIsOpen: false,
-    activeImage: images[0]
+    activeImage: images[0],
+    activeImageIndex: 0
     };
 
     this.openModal = this.openModal.bind(this);
@@ -45,17 +46,15 @@ class App extends Component {
 
   openModal() {
     this.setState({modalIsOpen: true});
-    this.changeActiveImage();
   }
 
   closeModal() {
     this.setState({modalIsOpen: false});
   }
-
-  changeActiveImage() {
-    var str = document.getElementById("active-image-index-tag").innerHTML;
-    var index = str[0];
-    this.setState({activeImage: images[index - 1]});
+  
+  changeActiveImage(index) {
+    this.setState({activeImage: images[index]});
+    this.setState({activeImageIndex: index});
   }
 
   render() {
@@ -70,16 +69,6 @@ class App extends Component {
       visibility: this.state.modalIsOpen ? 'hidden' : 'visible'
     }
 
-    // const openModalButtonStyling = {
-    //   position: 'absolute',
-    //   backgroundColor: 'black',
-    //   marginTop: '-10rem',
-    //   width: '40rem',
-    //   height:'30rem',
-    //   zIndex: '5',
-    //   visibility: this.state.modalIsOpen ? 'hidden' : 'visible'
-    // }
-
     return (
 
       <div className="App">
@@ -93,7 +82,10 @@ class App extends Component {
           <header className="App-header">
           <div id="open-modal-button" className="container carousel-container" style={carouselContainerStyling}>
             <div className="open-modal-button" onClick={this.openModal}>piece details</div>
-            <DemoCarousel images={images}/>
+            <DemoCarousel
+              images={images}
+              selectedItem={this.state.activeImageIndex}
+              changeActiveImage={this.changeActiveImage}/>
           </div>
         </header>
       </div>
